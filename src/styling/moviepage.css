@@ -1,0 +1,51 @@
+.pop-page-container, .NowPlaying-page-container, 
+ .TopMovies-page-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.PopMovie-page-component, .TopMovie-page-component, 
+.NowPlaying-page-component {
+    align-items: center;
+    text-align: center;
+    display: inline-block;
+    margin: 30px 60px;
+    width: 200px;
+    
+}
+
+.topMovies-page-title, .popMovies-page-title, .nowPlaying-page-title{
+    font-size: 50px;
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 1893px){
+   
+    .pop-page-container, .NowPlaying-page-container, 
+ .TopMovies-page-container {
+     display: grid;
+     grid-template-columns: 600px 600px;
+
+ }
+
+}
+
+@media only screen and (max-width: 1200px){
+    .pop-page-container, .NowPlaying-page-container, 
+ .TopMovies-page-container {
+     display: grid;
+     grid-template-columns: 375px;
+
+ }
+
+}
+
+@media only screen and (max-width: 1200px){
+    .pop-page-container, .NowPlaying-page-container, 
+ .TopMovies-page-container {
+    display: grid;
+    grid-template-columns: 300px 300px;
+
+ }
+}
