@@ -1,18 +1,21 @@
 import React, {useContext, useEffect} from 'react';
 import {MovieContext} from '../movieContextProvider';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 import PopMoviePageComponent from '../PageComponents/PopMoviePageComponent';
 
 function Popular() {
 // console.log(props)
   // const {popMovies, getPopMovies, colors} = props;
-  let navigate = useNavigate();
+  // let navigate = useNavigate();
   const {popMovies, getPopMovies} = useContext(MovieContext);
 
   useEffect(() => {
+    if(popMovies.length){
+      return
+    }
     getPopMovies();
-}, [])
+}, [popMovies, getPopMovies])
 
 
 

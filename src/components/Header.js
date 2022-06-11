@@ -1,7 +1,7 @@
-import React, { useState, useContext, useEffect} from 'react';
+import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
-import {MovieContext} from '../movieContextProvider';
-import {useNavigate} from 'react-router-dom'
+// import {MovieContext} from '../movieContextProvider';
+// import {useNavigate} from 'react-router-dom'
 import axios from 'axios';
 
 

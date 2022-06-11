@@ -1,19 +1,22 @@
 import React, {useContext, useEffect} from 'react';
 import {MovieContext} from '../movieContextProvider';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 import TopMoviePageComponent from '../PageComponents/TopMoviePageComponent';
 
 
 
 function TopMovies() {
-    let navigate = useNavigate();
+    // let navigate = useNavigate();
 
     const {getTopMovies, topMovies} = useContext(MovieContext);
     
     useEffect(() => {
+      if(topMovies.length){
+        return
+      }
         getTopMovies();
-    }, [])
+    }, [getTopMovies, topMovies])
 
   return (
       <>

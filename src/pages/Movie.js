@@ -1,12 +1,12 @@
-import React, {useContext, useEffect, useState} from 'react';
-import {MovieContext} from '../movieContextProvider';
+import React, {useEffect, useState} from 'react';
+// import {MovieContext} from '../movieContextProvider';
 import {useParams} from 'react-router-dom'
 import axios from 'axios';
 
 
 function Movie() {
-  let params = useParams();
-  let movie_id = useParams();
+  // let params = useParams();
+  // let movie_id = useParams();
   let {id} = useParams();
   let newId = id.slice(1)
 
@@ -23,7 +23,7 @@ function Movie() {
           setMovie(res.data)
         }})
       .catch(err => console.log(err))
-    }, [newId]);
+    }, [newId, movie.id]);
   
 
     // console.log("params:",params)

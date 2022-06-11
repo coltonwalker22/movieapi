@@ -1,10 +1,10 @@
-import React, {useContext} from 'react';
-import {MovieContext} from '../movieContextProvider';
+import React from 'react';
+// import {MovieContext} from '../movieContextProvider';
 import SearchedComponent from '../components/SearchedComponent';
 
 function Searched(props) {
-    const {searchInput, filteredResults, filteredData} = props
-    const {searchMovies, setSearchMovies} = useContext;
+    const {filteredData} = props
+    // const {searchMovies, setSearchMovies} = useContext;
 
 
   return (

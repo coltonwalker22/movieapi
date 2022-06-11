@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom';
-import Movie from '../pages/Movie'
+// import Movie from '../pages/Movie'
 
 function PopMovies(props) {
  

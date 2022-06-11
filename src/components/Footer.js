@@ -7,7 +7,7 @@ function Footer() {
   <>
   <div className="footer-container">
   <button onClick={() => {navigate("/")
-      }}> return to page</button>
+      }}> return to Home page</button>
    </div>
   
   </>

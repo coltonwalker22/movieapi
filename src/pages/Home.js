@@ -5,29 +5,34 @@ import {useNavigate} from 'react-router-dom';
 import PopMoviesComponent from '../components/PopMoviesComponent'
 import NowPlayingComponent from '../components/NowPlayingComponent'
 import TopMoviesComponent from '../components/TopMoviesComponent'
-import axios from 'axios';
+// import axios from 'axios';
 
 
 
 function Home() {
     let navigate = useNavigate();
 
-    const {popMovies, getPopMovies, nowPlaying, topMovies, getNowPlaying, getTopMovies, searchMovies, getSearchedMovies} = useContext(MovieContext);
+
+    const {popMovies, getPopMovies, nowPlaying, topMovies, getNowPlaying, getTopMovies, searchMovies /*getSearchedMovies*/} = useContext(MovieContext);
 
     console.log("popMovies:",popMovies)
     console.log("nowPlaying:",nowPlaying)
     console.log("topMovies:", topMovies)
     console.log("searchMovies:", searchMovies)
     
+
     useEffect(() => {
+        if(popMovies.length && topMovies.length && nowPlaying.length){
+            return 
+        }
         getPopMovies();
-        axios.get(`https://api.themoviedb.org/3/movie/675353?api_key=${process.env.REACT_APP_MOVIEDB}&region=US`)
-        .then(res => console.log("test:",res.data))
-        .catch(err => console.log(err))
+        // axios.get(`https://api.themoviedb.org/3/movie/675353?api_key=${process.env.REACT_APP_MOVIEDB}&region=US`)
+        // .then(res => console.log("test:",res.data))
+        // .catch(err => console.log(err))
         getNowPlaying();
         getTopMovies();
         // getSearchedMovies();
-    }, []);
+    }, [getPopMovies, getNowPlaying, getTopMovies, popMovies, topMovies, nowPlaying]);
 
   
     return (

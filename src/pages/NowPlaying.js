@@ -1,17 +1,20 @@
 import React, {useContext, useEffect} from 'react';
 import {MovieContext} from '../movieContextProvider';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 import NowPlayingPageComponent from '../PageComponents/NowPlayingPageComponent'
 
 function NowPlaying() {
-    let navigate = useNavigate();
+    // let navigate = useNavigate();
 
     const {nowPlaying, getNowPlaying} = useContext(MovieContext);
     
     useEffect(() => {
+      if(nowPlaying.length){
+        return
+      }
         getNowPlaying();
-    }, [])
+    }, [nowPlaying, getNowPlaying])
 
   return (
       <>
